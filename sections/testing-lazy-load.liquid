@@ -1,0 +1,81 @@
+{% assign default = '1400x' %}
+{% assign size1 = '480x' %}
+{% assign size2 = '765x' %}
+{% assign size3 = '900x' %}
+{% assign size4 = '1000x' %}
+{% assign size5 = '1100x' %}
+{% assign size6 = '1300x' %}
+{% assign size7 = '1500x' %}
+{% assign size8 = '1700x' %}
+{% assign size9 = '1900x' %}
+{% assign size10 = '2000x' %}
+
+
+<div class="lazy-load-test">
+
+
+  <div class="owl-carousel owl-theme">
+    {% for block in section.blocks %}
+        <img  src="{{ block.settings.image | img_url: '100x', format: 'pjpg' }}"
+              alt="{{ block.settings.image.alt | escape }}"
+              class="lazyload {{ settings.image_loading_style }}"
+              sizes="100vw"
+              data-src="{{ block.settings.image | img_url: default, format: 'pjpg' }}"
+              srcset="
+              {{ block.settings.image | img_url: default, format: 'pjpg' }} {{default | replace: 'x', 'w'}},
+              {{ block.settings.image | img_url: size1, format: 'pjpg' }} {{size1 | replace: 'x', 'w'}},
+              {{ block.settings.image | img_url: size2, format: 'pjpg' }} {{size2 | replace: 'x', 'w'}},
+              {{ block.settings.image | img_url: size3, format: 'pjpg' }} {{size3 | replace: 'x', 'w'}},
+              {{ block.settings.image | img_url: size4, format: 'pjpg' }} {{size4 | replace: 'x', 'w'}},
+              {{ block.settings.image | img_url: size5, format: 'pjpg' }} {{size5 | replace: 'x', 'w'}},
+              {{ block.settings.image | img_url: size6, format: 'pjpg' }} {{size6 | replace: 'x', 'w'}},
+              {{ block.settings.image | img_url: size7, format: 'pjpg' }} {{size7 | replace: 'x', 'w'}},
+              {{ block.settings.image | img_url: size8, format: 'pjpg' }} {{size8 | replace: 'x', 'w'}},
+              {{ block.settings.image | img_url: size9, format: 'pjpg' }} {{size9 | replace: 'x', 'w'}},
+              {{ block.settings.image | img_url: size10, format: 'pjpg' }} {{size10 | replace: 'x', 'w'}}"
+               />
+    {% endfor %}
+  </div>
+
+</div>
+
+<script>
+$('.owl-carousel').owlCarousel({
+  items:1,
+  lazyLoad:true,
+  loop:true,
+  margin:10
+});
+</script>
+
+
+
+{% schema %}
+{
+	"name": "testing image slider",
+	"max_blocks": 8,
+	"settings": [
+
+  ],
+	"blocks": [
+  {
+    "type": "Featured-image",
+    "name": "Full background image",
+    "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "1600 x 1000px recommended"
+    }
+    ]
+    }
+  ],
+	"presets": [
+  {
+		"name": "testing image slider",
+		"category": "images"
+	}
+  ]
+}
+{% endschema %}
