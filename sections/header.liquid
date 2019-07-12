@@ -397,29 +397,6 @@
 
   <script type="text/javascript">
 
-  var timer; // This will hold a reference to the timer
-
-  function showLine() {
-
-      $('.explore-line').animate({
-       // width: "50%",
-       width: "100%",
-     }, 'slow', 'swing'), 300;
-  }
-
-  function hideLine(){
-    $('.explore-line').animate({
-     width: "0%",
-   }, 'slow', 'swing'), 300;
-  }
-
-  $(".menu-item-box").mouseenter(function() { //mouseenter
-  window.clearTimeout(timer);
-  showLine();
-  });
-  $("header").mouseleave(function() {
-    timer = window.setTimeout(hideLine, 300);
-  });
 
 
 

@@ -4,12 +4,12 @@ function setSliderImage() {
   var tablet = window.matchMedia( "(max-width: 800px)" );
   var phone = window.matchMedia( "(max-width: 500px)" );
   var device = phone.matches ? 'phone' : (tablet.matches ? 'tablet' : 'desktop');
-  var deviceWidths = { phone: '500x', tablet: '800x', desktop: '1000x' }
+  var deviceWidths = { phone: '500x', tablet: '600x', desktop: '800x' }
   var images = document.getElementsByClassName('offset-opimized-image');
   Array.from(images).forEach(image => {
     var background = image.style.backgroundImage
-    image.style.backgroundImage = background.replace('1000x', deviceWidths[device]);
-    console.log(image.style.backgroundImage);
+    image.style.backgroundImage = background.replace('800x', deviceWidths[device]);
+    // console.log(image.style.backgroundImage);
   })
 }
 
@@ -17,7 +17,7 @@ window.addEventListener('resize', setSliderImage);
 window.addEventListener('load', setSliderImage);
 
 </script>
-
+   
 
 
 
@@ -32,7 +32,7 @@ window.addEventListener('load', setSliderImage);
       </div>
       <!-- <div class="featured-offset-image seven columns" style="background-image:url({{ section.settings.offset-image | img_url: '1000x1000' }})">
       </div> -->
-      <div class="featured-offset-image wow fadeInDown offset-opimized-image" style="background-image:url({{ section.settings.offset-image | img_url: '1000x' }})">
+      <div class="featured-offset-image wow fadeInDown offset-opimized-image" style="background-image:url({{ section.settings.offset-image | img_url: '800x' }})">
       </div>
     </div>
     <div class="text-container eight columns">
@@ -62,7 +62,7 @@ window.addEventListener('load', setSliderImage);
       </div>
       <!-- <div class="featured-offset-image-two seven columns" style="background-image:url({{ section.settings.offset-image-two | img_url: '1000x1000' }})">
       </div> -->
-      <div class="featured-offset-image-two wow fadeInUp offset-opimized-image" style="background-image:url({{ section.settings.offset-image-two | img_url: '1000x1000' }})">
+      <div class="featured-offset-image-two wow fadeInUp offset-opimized-image" style="background-image:url({{ section.settings.offset-image-two | img_url: '800x800' }})">
       </div>
    </div>
   </div>

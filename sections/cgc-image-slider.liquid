@@ -1,4 +1,4 @@
-{% assign phoneImage = false %}
+<!-- {% assign phoneImage = false %}
 
 <script type="text/javascript">
 
@@ -67,9 +67,7 @@ window.addEventListener('load', setSliderImage);
 
                     {% if block.settings.enable-badge-icon %}
                     <div class="slide-icon-container wow fadeInUp" data-animation-in="fadeInUp">
-                      <!-- <table style="width:70px;"cellpadding="0" cellspacing="0"><tr><td><a href="https://www.houzz.com/pro/creategood/create-good-sinks-kitchen-sinks-and-accessories"><img src="https://st.hzcdn.com/static/badge_8_8@2x.png" alt="Dan Sullivan in Cincinnati, OH on Houzz" width="70" height="70" border="0" /></a></td></tr></table>
-                      <table style="width:70px;"cellpadding="0" cellspacing="0"><tr><td><a href="https://www.houzz.com/pro/creategood/create-good-sinks-kitchen-sinks-and-accessories"><img src="https://st.hzcdn.com/static/badge_13_8@2x.png" alt="Dan Sullivan in Cincinnati, OH on Houzz" width="70" height="70" border="0" /></a></td></tr></table>
-                      <table style="width:70px;"cellpadding="0" cellspacing="0"><tr><td><a href="https://www.houzz.com/pro/creategood/create-good-sinks-kitchen-sinks-and-accessories"><img src="https://st.hzcdn.com/static/badge_44_8@2x.png" alt="Dan Sullivan in Cincinnati, OH on Houzz" width="70" height="70" border="0" /></a></td></tr></table> -->
+
                       <table style="width:70px;"cellpadding="0" cellspacing="0"><tr><td><a href="https://www.houzz.com/pro/creategood/create-good-sinks-kitchen-sinks-and-accessories"><img src="https://st.hzcdn.com/static/badge_47_8@2x.png" alt="Dan Sullivan in Cincinnati, OH on Houzz" width="70" height="70" border="0" /></a></td></tr></table>
                     </div>
 
@@ -167,117 +165,7 @@ window.addEventListener('load', setSliderImage);
 </div>
 
 
-<script type="text/javascript">
 
-// Declare Carousel jquery object
-var owl = $('.owl-carousel');
-
- $(".owl-carousel").owlCarousel({
-   animateIn: 'fadeIn',
-   animateOut: 'fadeOut',
-   lazyLoad:true,
-   loop:true,
-   autoplay:false,
-   autoplayTimeout:5000,
-   autoHeight:true,
-   autoplayHoverPause:true,
-   mouseDrag:true,
-   touchDrag:true,
-   singleItem: true,
-   items : 1,
-   itemsDesktop : false,
-   itemsDesktopSmall : false,
-   itemsTablet: false,
-   dotsData: false,
-   dots:true,
-   itemsMobile: false,
-   nav:true,
-   navText:["<div class='nav-btn prev-slide homepage-top-prev-slide'><i class='fas fa-angle-left homepage-top-angle-left'></i></div>",
-           "<div class='nav-btn next-slide homepage-top-next-slide'><i class='fas fa-angle-right homepage-top-angle-right'></i></div>"],
-   responsive : {
-       // breakpoint from 0 up
-       0 : {
-         dots:false
-       },
-       // breakpoint from 480 up
-       480 : {
-         dots:false
-       },
-       800 : {
-         dots:true
-       }
-   }
- });
-
-
-
-
- // // Carousel initialization
- // owl.owlCarousel({
- //     loop:false,
- //     margin:0,
- //     navSpeed:500,
- //     nav:true,
- //     autoplay: true,
- //     rewind: true,
- //     items:1
- // });
-
- // add animate.css class(es) to the elements to be animated
-   function setAnimation ( _elem, _InOut ) {
-     // Store all animationend event name in a string.
-     // cf animate.css documentation
-     var animationEndEvent = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-
-     _elem.each ( function () {
-       var $elem = $(this);
-       var $animationType = 'animated ' + $elem.data( 'animation-' + _InOut );
-
-       $elem.addClass($animationType).one(animationEndEvent, function () {
-         $elem.removeClass($animationType); // remove animate.css Class at the end of the animations
-       });
-     });
-   }
-
- // Fired before current slide change
-   owl.on('change.owl.carousel', function(event) {
-       var $currentItem = $('.owl-item', owl).eq(event.item.index);
-       var $elemsToanim = $currentItem.find("[data-animation-out]");
-       setAnimation ($elemsToanim, 'out');
-   });
-
- // Fired after current slide has been changed
-   var round = 0;
-   owl.on('changed.owl.carousel', function(event) {
-
-       var $currentItem = $('.owl-item', owl).eq(event.item.index);
-       var $elemsToanim = $currentItem.find("[data-animation-in]");
-
-       setAnimation ($elemsToanim, 'in');
-   })
-
-   owl.on('translated.owl.carousel', function(event) {
-     console.log (event.item.index, event.page.count);
-
-       if (event.item.index == (event.page.count - 1))  {
-         if (round < 1) {
-           round++
-           console.log (round);
-         } else {
-           owl.trigger('stop.owl.autoplay');
-           var owlData = owl.data('owl.carousel');
-           owlData.settings.autoplay = false; //don't know if both are necessary
-           owlData.options.autoplay = false;
-           owl.trigger('refresh.owl.carousel');
-         }
-       }
-   });
-
-
-
-
-
-</script>
 
 
 {% schema %}
@@ -477,4 +365,4 @@ var owl = $('.owl-carousel');
 	}
   ]
 }
-{% endschema %}
+{% endschema %} -->

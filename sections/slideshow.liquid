@@ -29,9 +29,6 @@
 
         {% if block.settings.enable-badge-icon %}
         <div class="slide-icon-container wow fadeInUp top-slide-houzz-icon" data-animation-in="fadeInUp">
-          <!-- <table style="width:70px;"cellpadding="0" cellspacing="0"><tr><td><a href="https://www.houzz.com/pro/creategood/create-good-sinks-kitchen-sinks-and-accessories"><img src="https://st.hzcdn.com/static/badge_8_8@2x.png" alt="Dan Sullivan in Cincinnati, OH on Houzz" width="70" height="70" border="0" /></a></td></tr></table>
-          <table style="width:70px;"cellpadding="0" cellspacing="0"><tr><td><a href="https://www.houzz.com/pro/creategood/create-good-sinks-kitchen-sinks-and-accessories"><img src="https://st.hzcdn.com/static/badge_13_8@2x.png" alt="Dan Sullivan in Cincinnati, OH on Houzz" width="70" height="70" border="0" /></a></td></tr></table>
-          <table style="width:70px;"cellpadding="0" cellspacing="0"><tr><td><a href="https://www.houzz.com/pro/creategood/create-good-sinks-kitchen-sinks-and-accessories"><img src="https://st.hzcdn.com/static/badge_44_8@2x.png" alt="Dan Sullivan in Cincinnati, OH on Houzz" width="70" height="70" border="0" /></a></td></tr></table> -->
           <table style="width:70px;"cellpadding="0" cellspacing="0"><tr><td><a href="https://www.houzz.com/pro/creategood/create-good-sinks-kitchen-sinks-and-accessories"><img src="https://st.hzcdn.com/static/badge_47_8@2x.png" alt="Dan Sullivan in Cincinnati, OH on Houzz" width="70" height="70" border="0" /></a></td></tr></table>
         </div>
         {% endif %}
@@ -46,19 +43,19 @@
                 alt="{{ block.settings.image.alt | escape }}"
                 class="lazyload {{ settings.image_loading_style }}"
                 sizes="100vw"
-                data-src="{{ block.settings.image | img_url: default, format: 'pjpg' }}"
+                data-src="{{ block.settings.image | img_url: default }}"
                 srcset="
                 {{ block.settings.image | img_url: default, format: 'pjpg' }} {{default | replace: 'x', 'w'}},
-                {{ block.settings.image | img_url: size1, format: 'pjpg' }} {{size1 | replace: 'x', 'w'}},
-                {{ block.settings.image | img_url: size2, format: 'pjpg' }} {{size2 | replace: 'x', 'w'}},
-                {{ block.settings.image | img_url: size3, format: 'pjpg' }} {{size3 | replace: 'x', 'w'}},
-                {{ block.settings.image | img_url: size4, format: 'pjpg' }} {{size4 | replace: 'x', 'w'}},
-                {{ block.settings.image | img_url: size5, format: 'pjpg' }} {{size5 | replace: 'x', 'w'}},
-                {{ block.settings.image | img_url: size6, format: 'pjpg' }} {{size6 | replace: 'x', 'w'}},
-                {{ block.settings.image | img_url: size7, format: 'pjpg' }} {{size7 | replace: 'x', 'w'}},
-                {{ block.settings.image | img_url: size8, format: 'pjpg' }} {{size8 | replace: 'x', 'w'}},
-                {{ block.settings.image | img_url: size9, format: 'pjpg' }} {{size9 | replace: 'x', 'w'}},
-                {{ block.settings.image | img_url: size10, format: 'pjpg' }} {{size10 | replace: 'x', 'w'}}"
+                {{ block.settings.image | img_url: size1 }} {{size1 | replace: 'x', 'w'}},
+                {{ block.settings.image | img_url: size2 }} {{size2 | replace: 'x', 'w'}},
+                {{ block.settings.image | img_url: size3 }} {{size3 | replace: 'x', 'w'}},
+                {{ block.settings.image | img_url: size4 }} {{size4 | replace: 'x', 'w'}},
+                {{ block.settings.image | img_url: size5 }} {{size5 | replace: 'x', 'w'}},
+                {{ block.settings.image | img_url: size6 }} {{size6 | replace: 'x', 'w'}},
+                {{ block.settings.image | img_url: size7 }} {{size7 | replace: 'x', 'w'}},
+                {{ block.settings.image | img_url: size8 }} {{size8 | replace: 'x', 'w'}},
+                {{ block.settings.image | img_url: size9 }} {{size9 | replace: 'x', 'w'}},
+                {{ block.settings.image | img_url: size10 }} {{size10 | replace: 'x', 'w'}}"
                  />
         {% else %}
           {% capture i %}{% cycle "1", "2" %}{% endcapture %}
@@ -88,8 +85,7 @@
                   {% endif %}
                   {% if forloop.first == true and block.settings.title != blank %}
                     {% if block.settings.enable-border-outline %}
-                   <h1 class="headline cgc-slider-headline" style="font-weight: 700;
-                        font-family: Poppins;
+                   <h1 class="headline cgc-slider-headline" style="
                         display: inline;
                         border: 3px solid white;
                         padding: 35px;
